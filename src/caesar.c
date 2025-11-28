@@ -3,6 +3,7 @@
 
 char encrypt_char(char c, int k)
 {
+    // Make it work for both uppercase and lowercase.
     if (isupper(c))
     {
         return (c - 'A' + k) % 26 + 'A';
@@ -13,6 +14,7 @@ char encrypt_char(char c, int k)
     }
     else
     {
-        return c; // Non-alphabetic characters remain unchanged.
+        // Non-alphabetic characters remain unchanged.
+        return c;
     }
 }
