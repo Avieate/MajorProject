@@ -5,6 +5,7 @@
 
 int main(int argc, char *argv[])
 {
+    # if the command line input isn't correct
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
@@ -30,6 +31,8 @@ int main(int argc, char *argv[])
     for (int j = 0; j < strlen(pt); j++)
     {
         char c = pt[j];
+        # make it work for both upper and lower case
+        # keys over 26 cycle back
         if (isupper(c))
         {
             printf("%c", (c - 'A' + k) % 26 + 'A');
